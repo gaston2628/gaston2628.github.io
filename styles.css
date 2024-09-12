@@ -10,8 +10,8 @@ body {
     color: #333;
     line-height: 1.6;
     background-image: url('background.png');
-    background-size: cover; /* Ajusta la imagen de fondo sin distorsionar */
-    background-attachment: fixed; /* Fija la imagen de fondo para que no se mueva con el contenido */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Estilo para el overlay de la imagen de presentación */
@@ -21,20 +21,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Asegura que esté por encima de todo el contenido */
+    z-index: 9999;
     transition: opacity 0.5s ease-out;
 }
 
 #overlay img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen para cubrir todo el área */
+    object-fit: cover;
 }
-
 
 /* Estilos para el header y el menú */
 header {
@@ -107,42 +106,40 @@ nav {
     display: block;
 }
 
-/* Resto del CSS */
-
 /* Menú de CVs */
 .cv-menu {
     list-style: none;
-    display: flex; /* Usar flex para centrar los botones */
-    justify-content: center; /* Centrar horizontalmente */
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap; /* Para que los elementos se ajusten en pantallas pequeñas */
 }
 
 .cv-item {
     position: relative;
     display: inline-block;
-    margin: 0 20px;
+    margin: 20px; /* Mayor espacio entre los elementos */
     text-align: center;
 }
 
 .cv-item a {
     text-decoration: none;
-    color: grey; /* Color del texto */
-    font-size: 1.5em; /* Tamaño del texto aumentado */
-    padding: 20px 35px; /* Tamaño del botón aumentado */
+    color: grey;
+    font-size: 1.5em;
+    padding: 20px 35px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Agregar transición para el sombreado */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombreado ligero */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cv-item a:hover {
     background-color: #f0f0f0;
-    color: darkgrey; /* Color del texto en hover */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Sombreado más intenso en hover */
+    color: darkgrey;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 .cv-preview {
     display: none;
@@ -181,8 +178,48 @@ nav {
     display: block;
 }
 
+/* Main */
 main {
     padding: 30px 0;
     text-align: center;
-    position: relative;
+}
+
+/* Media Queries para optimización en móviles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .menu-item {
+        margin: 0 10px;
+    }
+
+    .cv-item a {
+        font-size: 1.2em;
+        padding: 15px 25px;
+    }
+
+    .cv-preview {
+        width: 250px;
+    }
+
+    /* Ajustes generales para móviles */
+    body {
+        background-size: contain; /* Ajusta la imagen de fondo en pantallas pequeñas */
+    }
+
+    .menu {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .menu-item {
+        margin-bottom: 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .menu a {
+        font-size: 1em;
+    }
 }
